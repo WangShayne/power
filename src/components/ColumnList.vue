@@ -1,50 +1,40 @@
 <template>
-    <ul  class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4 p-2">
-        <li v-for="item in list" :key="item.id">
-            <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" :src="item.avatar" alt="" width="384" height="512">
-                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-                    <blockquote>
-                    <p class="text-lg font-semibold">
-                       {{item.description}}
-                    </p>
-                    </blockquote>
-                    <figcaption class="font-medium">
-                    <div class="text-cyan-600">
-                        {{item.title}}
-                    </div>
-                    <div class="text-gray-500">
-                        <a href="#">进入专栏</a>
-                    </div>
-                    </figcaption>
-                </div>
-            </figure>
-        </li>
-        
-    </ul>
+  <ul class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4 p-2">
+    <li v-for="item in list" :key="item.id">
+        <div class="p-6 flex bg-gray-100 rounded-xl mx-auto items-center">
+          <div class="flex-shrink-0">
+            <img class="w-40 h-48" :src="item.avatar" alt="avatar">
+          </div>
+          <div class="p-12 flex flex-col items-center">
+            <h1 class="text-xl font-medium text-black text-center truncate">{{item.title}}</h1>
+            <p class="h-24 text-gray-500 text-left overflow-ellipsis overflow-hidden">{{item.description}}</p>
+            <button class="mt-6 py-2 px-4 w-32 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">进入专栏</button>
+          </div>
+        </div>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-export interface ColumnListProps{
-    id: number;
-    title: string;
-    avatar: string;
-    description: string;
+import { defineComponent, PropType } from "vue";
+export interface ColumnListProps {
+  id: number;
+  title: string;
+  avatar: string;
+  description: string;
 }
 
 export default defineComponent({
-    name: 'ColumnList',
-    props: {
-        list: {
-            type: Array as PropType<ColumnListProps[]>,
-            requird: true
-        }
+  name: "ColumnList",
+  props: {
+    list: {
+      type: Array as PropType<ColumnListProps[]>,
+      requird: true,
     },
-    setup(props) {
-        return {
-            ...props
-        }
-    },
-})
+  },
+  setup(props) {
+    return {
+    };
+  },
+});
 </script>
