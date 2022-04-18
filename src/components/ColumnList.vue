@@ -1,5 +1,5 @@
 <template>
-  <ul class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4 p-2">
+  <ul class="grid grid-flow-row grid-cols-3 grid-rows-3 gap-4 p-4">
     <li v-for="item in list" :key="item.id">
         <div class="p-6 flex bg-gray-100 rounded-xl mx-auto items-center">
           <div class="flex-shrink-0">

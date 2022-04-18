@@ -1,9 +1,15 @@
 <template>
-  <ColumnList :list="testData"/>  
+    <GlobalHeader :user="userData"/> 
+    <ColumnList :list="testData"/> 
 </template>
 
 <script setup lang="ts">
 import ColumnList, { ColumnListProps } from "./components/ColumnList.vue";
+import GlobalHeader, { UserProps } from "./components/GlobalHeader.vue";
+const userData: UserProps = {
+  isLogin: true,
+  userName: "shayne"
+}
 const testData: ColumnListProps[] = [
   {
     id: 0,
@@ -39,6 +45,5 @@ const testData: ColumnListProps[] = [
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
