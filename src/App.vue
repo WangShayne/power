@@ -8,7 +8,7 @@ import ColumnList, { ColumnListProps } from "./components/ColumnList.vue";
 import GlobalHeader, { UserProps } from "./components/GlobalHeader.vue";
 const userData: UserProps = {
   isLogin: true,
-  userName: "shayne"
+  userName: "Shayne"
 }
 const testData: ColumnListProps[] = [
   {
